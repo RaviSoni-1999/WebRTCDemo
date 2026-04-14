@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553376750516",
+    "project_id": "webrtcdemo-50061",
+    "storage_bucket": "webrtcdemo-50061.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553376750516:android:ff128690c4b2a6d329b0e1",
+        "android_client_info": {
+          "package_name": "com.mantra.webrtcdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJgTvgnGk3qjI-ymN8vJDPu4iHSqtviAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
