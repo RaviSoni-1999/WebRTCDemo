@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WebRTCDemo</string>
+    <string name="waiting_for_others_to_join">Waiting for others to join…</string>
+    <string name="you">You (%1$s)</string>
 </resources>

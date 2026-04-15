@@ -43,8 +43,3 @@ fun AppNavHost(navController: NavHostController) {
 fun HomeScreen(navController: NavHostController) {
     // Placeholder
 }
-
-@Composable
-fun CallScreen(isVideo: Boolean, roomId: String, navController: NavHostController) {
-    // Placeholder
-}

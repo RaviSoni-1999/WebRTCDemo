@@ -22,7 +22,7 @@ import javax.inject.Inject
 // Why MVVM: Keeps UI code clean and logic reusable.
 @HiltViewModel
 class WebRtcViewModel @Inject constructor(
-    private val webRtcManager: WebRtcManager,
+    val webRtcManager: WebRtcManager,
     private val firebaseSignaling: FirebaseSignaling
 ) : ViewModel() {
 
@@ -31,6 +31,7 @@ class WebRtcViewModel @Inject constructor(
 
     // List of all remote video tracks (for UI grid)
     val remoteVideoTracks = mutableStateMapOf<String, VideoTrack>()
+
 
     // First, define the PeerConnection.Observer
     // Why? Because signalingListener needs to use it when creating new PeerConnections.
