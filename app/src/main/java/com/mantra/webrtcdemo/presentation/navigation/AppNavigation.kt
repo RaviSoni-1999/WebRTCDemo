@@ -6,13 +6,16 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.mantra.webrtcdemo.presentation.ui.screens.CallScreen
+import com.mantra.webrtcdemo.presentation.ui.screens.HomeScreen
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")
-    data object Call : Screen("call/{isVideo}/{roomId}") {
-        fun createRoute(isVideo: Boolean, roomId: String) = "call/$isVideo/$roomId"
+    data object Call : Screen("call_screen/{roomId}/{userName}") {
+        fun createRoute(roomId: String, userName: String): String {
+            return "call_screen/$roomId/$userName"
+        }
     }
-    data object Chat : Screen("chat/{roomId}")
 }
 
 @Composable
@@ -21,25 +24,22 @@ fun AppNavHost(navController: NavHostController) {
         composable(Screen.Home.route) { 
             HomeScreen(navController) 
         }
+
         composable(
             route = Screen.Call.route,
             arguments = listOf(
-                navArgument("isVideo") { type = NavType.BoolType },
-                navArgument("roomId") { type = NavType.StringType }
+                navArgument("roomId") { type = NavType.StringType },
+                navArgument("userName") { type = NavType.StringType }
             )
         ) { backStackEntry ->
-            val isVideo = backStackEntry.arguments?.getBoolean("isVideo") ?: false
             val roomId = backStackEntry.arguments?.getString("roomId") ?: ""
-            CallScreen(isVideo = isVideo, roomId = roomId, navController = navController)
-        }
-        composable(Screen.Chat.route) { 
-            /* Chat screen later */ 
+            val userName = backStackEntry.arguments?.getString("userName") ?: "User"
+
+            CallScreen(
+                roomId = roomId,
+                userName = userName,
+                navController = navController
+            )
         }
     }
-}
-
-// Dummy screen composables to allow compilation
-@Composable
-fun HomeScreen(navController: NavHostController) {
-    // Placeholder
 }

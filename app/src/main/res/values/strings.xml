@@ -2,4 +2,7 @@
     <string name="app_name">WebRTCDemo</string>
     <string name="waiting_for_others_to_join">Waiting for others to join…</string>
     <string name="you">You (%1$s)</string>
+    <string name="mic">Mic</string>
+    <string name="camera">Camera</string>
+    <string name="end_call">End Call</string>
 </resources>
