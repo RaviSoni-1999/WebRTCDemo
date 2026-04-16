@@ -18,11 +18,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.mantra.webrtcdemo.R
 import com.mantra.webrtcdemo.presentation.navigation.Screen
 
 // HomeScreen.kt
@@ -42,7 +44,7 @@ fun HomeScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "WebRTC Group Call",
+            text = stringResource(R.string.call_title),
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
@@ -52,8 +54,8 @@ fun HomeScreen(navController: NavController) {
         OutlinedTextField(
             value = roomId,
             onValueChange = { roomId = it },
-            label = { Text("Room ID") },
-            placeholder = { Text("Enter room id (e.g. room123)") },
+            label = { Text(stringResource(R.string.room_id)) },
+            placeholder = { Text(stringResource(R.string.room_hint)) },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -62,8 +64,8 @@ fun HomeScreen(navController: NavController) {
         OutlinedTextField(
             value = userName,
             onValueChange = { userName = it },
-            label = { Text("Your Name") },
-            placeholder = { Text("Enter your name") },
+            label = { Text(stringResource(R.string.name_label)) },
+            placeholder = { Text(stringResource(R.string.name_hint)) },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -88,7 +90,7 @@ fun HomeScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Tip: Use same Room ID on another device to test group call",
+            text = stringResource(R.string.room_tip),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )

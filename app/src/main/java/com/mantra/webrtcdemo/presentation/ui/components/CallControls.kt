@@ -65,7 +65,7 @@ fun CallControls(
         IconButton(onClick = onEndCall) {
             Icon(
                 imageVector = Icons.Default.CallEnd,
-                contentDescription = stringResource(R.string.end_call),
+                contentDescription = stringResource(R.string.call_end),
                 tint = Color.Red,
                 modifier = Modifier.size(40.dp)
             )

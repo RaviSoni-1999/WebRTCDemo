@@ -29,7 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.mantra.webrtcdemo.R
 import com.mantra.webrtcdemo.presentation.ui.components.CallControls
@@ -94,7 +94,7 @@ fun CallScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = stringResource(R.string.waiting_for_others_to_join),
+                            text = stringResource(R.string.waiting_join),
                             style = MaterialTheme.typography.titleMedium
                         )
                     }
@@ -110,7 +110,7 @@ fun CallScreen(
                         // Show Local Video (Your own camera)
                         item {
                             VideoBox(
-                                title = stringResource(R.string.you, userName),
+                                title = stringResource(R.string.user_you, userName),
                                 videoTrack = viewModel.webRtcManager.localVideoTrack,
                                 isMirrored = true,
                                 isLocal = true

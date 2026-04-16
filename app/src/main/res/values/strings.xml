@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">WebRTCDemo</string>
-    <string name="waiting_for_others_to_join">Waiting for others to join…</string>
-    <string name="you">You (%1$s)</string>
+    <string name="waiting_join">Waiting for others to join…</string>
+    <string name="user_you">You (%1$s)</string>
     <string name="mic">Mic</string>
     <string name="camera">Camera</string>
-    <string name="end_call">End Call</string>
+    <string name="call_end">End Call</string>
+    <string name="call_title">WebRTC Group Call</string>
+    <string name="room_id">Room ID</string>
+    <string name="room_hint">Enter room id (e.g. room123)</string>
+    <string name="name_label">Your Name</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="room_tip">Tip: Use same Room ID on another device to test group call</string>
+    <string name="perm_desc">This app needs camera and microphone permission to make video/audio calls.</string>
+    <string name="perm_grant">Grant Permissions</string>
+    <string name="perm_required">Permissions are required for video and audio features</string>
+    <string name="perm_title"><![CDATA[Camera & Microphone Access Required]]></string>
 </resources>
